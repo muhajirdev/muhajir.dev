@@ -1,0 +1,12 @@
+{
+  "name": "muhajirdev-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev"
+  },
+  "dependencies": {
+    "next": "^9.4.4"
+  }
+}
