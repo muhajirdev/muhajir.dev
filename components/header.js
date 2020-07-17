@@ -3,13 +3,10 @@ import Link from 'next/link'
 export default function Header() {
   return (
     <>
-      <header className="header">
-        <nav className="nav">
+      <header className="w-full shadow py-8 px-32">
+        <nav className="flex justify-between">
           <Link href="/">
-            <a>My Blog</a>
-          </Link>
-          <Link href="/about">
-            <a>About</a>
+            <a className="font-mono font-bold">muhajir.dev</a>
           </Link>
         </nav>
       </header>

@@ -1,15 +1,43 @@
+import { useState } from 'react'
 import matter from 'gray-matter'
 
 import Layout from '@components/layout'
 import PostList from '@components/postlist'
 
+const ContactForm = () => {
+  return (
+    <form>
+      <input type="email" />
+    </form>
+  )
+}
+
+const Hero = () => {
+  const [tryingToContact, contact] = useState(false)
+  return (
+    <div>
+      <h1 className="font-mono text-6xl font-bold mt-32">Muhammad Muhajir</h1>
+      <p className="mb-6 text-lg">Fullstack Developer</p>
+      <button
+        className="bg-black rounded text-base uppercase px-4 py-2 text-white"
+        onClick={() => contact(true)}
+      >
+        Contact
+      </button>
+      {tryingToContact && <ContactForm />}
+    </div>
+  )
+}
+
 const index = ({ title, description, posts, ...props }) => {
   return (
     <Layout pageTitle={title}>
-      <h1 className="title">Welcome to my blog!</h1>
-      <p className="description">{description}</p>
       <main>
-        <PostList posts={posts} />
+        <Hero />
+        <div className="mt-24">
+          <h1 className="text-3xl font-bold mb-4">Writings</h1>
+          <PostList posts={posts} />
+        </div>
       </main>
     </Layout>
   )

@@ -6,18 +6,30 @@ export default function PostList({ posts }) {
   return (
     <div>
       {!posts && <div>No posts!</div>}
-      <ul>
+      <div className="flex -mx-8">
         {posts &&
           posts.map((post) => {
             return (
-              <li key={post.slug}>
-                <Link href={{ pathname: `/post/${post.slug}` }}>
-                  <a>{post.frontmatter.title}</a>
-                </Link>
-              </li>
+              <Link
+                href={'/post/[postname]'}
+                as={`/post/${post.slug}`}
+                key={post.slug}
+              >
+                <a className="mb-4 shadow-md rounded-md h-64 p-6 w-64 mx-8 flex flex-col justify-between">
+                  <h2 className="text-xl tracking-wide font-bold">
+                    {post.frontmatter.title}
+                  </h2>
+                  <div>
+                    <p className="pb-6 text-gray-700">
+                      Lorem ipsum dolor sit amet consectetur adipisicing...
+                    </p>
+                    <div className="border-b-4 w-24" />
+                  </div>
+                </a>
+              </Link>
             )
           })}
-      </ul>
+      </div>
     </div>
   )
 }
