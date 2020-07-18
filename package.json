@@ -9,14 +9,22 @@
     "export": "next export"
   },
   "dependencies": {
+    "@apollo/client": "^3.0.2",
+    "@octokit/graphql": "^4.5.2",
+    "axios": "^0.19.2",
+    "fetch-cookie": "^0.10.1",
+    "graphql": "^15.3.0",
+    "graphql-request": "^2.0.0",
     "gray-matter": "^4.0.2",
     "next": "^9.4.4",
+    "node-fetch": "^2.6.0",
     "postcss-flexbugs-fixes": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "raw-loader": "^4.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-markdown": "^4.3.1",
+    "slug": "^3.3.2",
     "tailwindcss": "^1.5.1"
   },
   "devDependencies": {}

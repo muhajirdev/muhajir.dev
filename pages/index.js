@@ -5,6 +5,8 @@ import Layout from '@components/layout'
 import PostList from '@components/postlist'
 import ContactForm from '@components/contact'
 
+import { getPosts } from 'lib/github-graphql-client'
+
 const Hero = () => {
   const [tryingToContact, contact] = useState(false)
   return (
@@ -46,23 +48,7 @@ export default index
 
 export async function getStaticProps() {
   const configData = await import(`../siteconfig.json`)
-
-  const posts = ((context) => {
-    const keys = context.keys()
-    const values = keys.map(context)
-
-    const data = keys.map((key, index) => {
-      let slug = key.replace(/^.*[\\\/]/, '').slice(0, -3)
-      const value = values[index]
-      const document = matter(value.default)
-      return {
-        frontmatter: document.data,
-        markdownBody: document.content,
-        slug,
-      }
-    })
-    return data
-  })(require.context('../posts', true, /\.md$/))
+  const posts = await getPosts()
 
   return {
     props: {
