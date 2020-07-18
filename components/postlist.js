@@ -11,7 +11,7 @@ export default function PostList({ posts }) {
             const postSlug = slug(post.title)
             return (
               <Link
-                href={'/post/[...postname]'}
+                href={'/post/[...post]'}
                 as={`/post/${post.number}/${postSlug}`}
                 key={postSlug}
               >
