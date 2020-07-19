@@ -16,6 +16,7 @@
     "graphql": "^15.3.0",
     "graphql-request": "^2.0.0",
     "gray-matter": "^4.0.2",
+    "hast-util-sanitize": "^2.0.3",
     "highlight.js": "^10.1.1",
     "next": "^9.4.4",
     "node-fetch": "^2.6.0",
@@ -28,9 +29,15 @@
     "rehype": "^11.0.0",
     "rehype-highlight": "^4.0.0",
     "rehype-parse": "^7.0.1",
+    "rehype-raw": "^4.0.2",
+    "rehype-sanitize": "^3.0.1",
     "rehype-stringify": "^8.0.0",
+    "remark-images": "^2.0.0",
+    "remark-parse": "^8.0.3",
+    "remark-rehype": "^7.0.0",
     "slug": "^3.3.2",
-    "tailwindcss": "^1.5.1"
+    "tailwindcss": "^1.5.1",
+    "unified": "^9.0.0"
   },
   "devDependencies": {}
 }
