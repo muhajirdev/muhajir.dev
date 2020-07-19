@@ -2,6 +2,9 @@ import Layout from '@components/layout'
 import { getPost, getPosts } from 'lib/github-graphql-client'
 import slug from 'slug'
 
+import rehype from 'rehype'
+import highlight from 'rehype-highlight'
+
 export default function BlogPost({ title, bodyHTML }) {
   return (
     <Layout pageTitle={title}>
@@ -22,11 +25,17 @@ export async function getStaticProps({ ...ctx }) {
   const [id, slug] = postParam
 
   const post = await getPost(id)
+  console.log('bodyHTML', post.bodyHTML)
+
+  const reHTML = await rehype()
+    .data('settings', { fragment: true })
+    .use(highlight)
+    .process(post.bodyHTML)
 
   return {
     props: {
       title: post.title,
-      bodyHTML: post.bodyHTML,
+      bodyHTML: reHTML.contents,
     },
   }
 }
