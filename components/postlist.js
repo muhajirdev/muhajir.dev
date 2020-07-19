@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import slug from 'slug'
 
+const getDescription = (text, length = 45) =>
+  text.split('').slice(0, length).join('') + '...'
+
 export default function PostList({ posts }) {
   return (
     <div>
@@ -21,7 +24,7 @@ export default function PostList({ posts }) {
                   </h2>
                   <div>
                     <p className="pb-6 text-gray-700">
-                      Lorem ipsum dolor sit amet consectetur adipisicing...
+                      {getDescription(post.bodyText)}
                     </p>
                     <div className="border-b-4 w-24" />
                   </div>
