@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Header from './header'
+import Footer from '@components/footer'
 
 export default function Layout({ children, pageTitle, ...props }) {
   return (
@@ -12,6 +13,7 @@ export default function Layout({ children, pageTitle, ...props }) {
         <Header />
         <div className="px-64 py-8">{children}</div>
       </section>
+      <Footer />
     </>
   )
 }

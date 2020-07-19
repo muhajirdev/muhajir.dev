@@ -35,10 +35,6 @@ const index = ({ title, description, posts, ...props }) => {
           <h1 className="text-3xl font-bold mb-8">Writings</h1>
           <PostList posts={posts} />
         </div>
-        <div className="mt-24">
-          <h1 className="text-3xl font-bold mb-8">Projects</h1>
-          <PostList posts={posts} />
-        </div>
       </main>
     </Layout>
   )
